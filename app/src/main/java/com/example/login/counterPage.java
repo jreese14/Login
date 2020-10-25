@@ -48,9 +48,9 @@ public class counterPage extends AppCompatActivity {
     private Button logoutbtn;
     private Integer counter = 0;
     String email,Notes,openClose,business_name;
-    String occupancy_Level;
+    String numberOfBeds;
     DatabaseReference databaseRef ;
-    ArrayList<OccupancyData> list;
+    //ArrayList<OccupancyData> list;
 
 
 
@@ -78,7 +78,7 @@ public class counterPage extends AppCompatActivity {
         //list = new ArrayList<OccupancyData>();
 
 
-         /** possible issue here  **/
+        /** possible issue here  **/
         // retrieving from the database to get last saved state
         uid = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
         databaseRef = FirebaseDatabase.getInstance().getReference().child("Login").child(uid);
@@ -88,19 +88,19 @@ public class counterPage extends AppCompatActivity {
                 if(snapshot.getValue()!=null){
                     email = snapshot.child("email").getValue().toString();
                     userEmail.setText(email);
-                    occupancy_Level = snapshot.child("occupancy level").getValue().toString();
-                    occupancyLevels.setText(occupancy_Level);
-                    counter = Integer.parseInt(occupancy_Level);
-                    Notes = snapshot.child("notes").getValue().toString();
+                    numberOfBeds = snapshot.child("numberOfBeds").getValue().toString();
+                    occupancyLevels.setText(numberOfBeds);
+                    counter = Integer.parseInt(numberOfBeds);
+                    Notes = snapshot.child("address").getValue().toString();
                     notes.setText(Notes);
-                    openClose = snapshot.child("open Close").getValue().toString();
-                    if(openClose.equals("open")){
+                    openClose = snapshot.child("freeTesting").getValue().toString();
+                    if(openClose.equals("yes")){
                         yes.setChecked(true);
                     }
-                    else if (openClose.equals("close")){
+                    else if (openClose.equals("no")){
                         no.setChecked(true);
                     }
-                    business_name = snapshot.child("name").getValue().toString();
+                    business_name = snapshot.child("hospitalName").getValue().toString();
                     BusinessName.setText(business_name);
 
                 }
@@ -113,7 +113,7 @@ public class counterPage extends AppCompatActivity {
         });
 
 
-         //setting onclick listeners
+        //setting onclick listeners
         BusinessName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -183,7 +183,7 @@ public class counterPage extends AppCompatActivity {
 //                business_name = BusinessName.getText().toString();
 //                email = userEmail.getText().toString();
 //                Notes = notes.getText().toString();
-//                occupancy_Level = Integer.toString(counter);
+//                numberOfBeds = Integer.toString(counter);
 //                if(yes.isChecked() && no.isChecked() == false){
 //                    yes.setChecked(true);
 //                    openClose="open";
@@ -200,7 +200,7 @@ public class counterPage extends AppCompatActivity {
 //                        snapshot.getRef().child("email").setValue(email);
 //                        snapshot.getRef().child("notes").setValue(Notes);
 //                        snapshot.getRef().child("open Close").setValue(openClose);
-//                        snapshot.getRef().child("occupancy level").setValue(occupancy_Level);
+//                        snapshot.getRef().child("occupancy level").setValue(numberOfBeds);
 //                    }
 //
 //                    @Override
@@ -222,24 +222,24 @@ public class counterPage extends AppCompatActivity {
                         business_name = BusinessName.getText().toString();
                         email = userEmail.getText().toString();
                         Notes = notes.getText().toString();
-                        occupancy_Level = Integer.toString(counter);
+                        numberOfBeds = Integer.toString(counter);
                         if(yes.isChecked()){
                             yes.setChecked(true);
-                            openClose="open";
+                            openClose="yes";
                         }
                         else{
                             no.setChecked(true);
-                            openClose="close";
+                            openClose="no";
                         }
                         databaseRef = FirebaseDatabase.getInstance().getReference().child("Login").child(firebaseAuth.getCurrentUser().getUid());
                         databaseRef.addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                snapshot.getRef().child("name").setValue(business_name);
+                                snapshot.getRef().child("hospitalName").setValue(business_name);
                                 snapshot.getRef().child("email").setValue(email);
-                                snapshot.getRef().child("notes").setValue(Notes);
-                                snapshot.getRef().child("open Close").setValue(openClose);
-                                snapshot.getRef().child("occupancy level").setValue(occupancy_Level);
+                                snapshot.getRef().child("address").setValue(Notes);
+                                snapshot.getRef().child("freeTesting").setValue(openClose);
+                                snapshot.getRef().child("numberOfBeds").setValue(numberOfBeds);
                             }
 
                             @Override

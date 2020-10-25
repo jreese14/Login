@@ -89,10 +89,10 @@ public class MainActivity extends AppCompatActivity {
                     progressDialog.dismiss();
                     Toast.makeText(MainActivity.this, "Username or Password wrong. Login Failed", Toast.LENGTH_SHORT).show();
                     attempts--;
-                    Info.setText("No of attempts left" + attempts);
-                    if(attempts == 0){
-                        Login.setEnabled(false);
-                    }
+                    //Info.setText("No of attempts left" + attempts);
+//                    if(attempts == 0){
+//                        Login.setEnabled(false);
+//                    }
                 }
             }
         });
