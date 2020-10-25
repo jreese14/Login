@@ -16,7 +16,7 @@ The data is then displayed in the user App. All the data is stored and retrieved
 
 <img src='https://github.com/jreese14/Login/blob/master/user3.gif' title='showing persistence of data' align='left' width="250" height="455">
 
-<img src='https://github.com/jreese14/Login/blob/master/Screen%20Shot%202020-10-25%20at%209.16.16%20AM.png' align='left' width='40%'>
+<img src='https://github.com/jreese14/Login/blob/master/Screen%20Shot%202020-10-25%20at%209.16.16%20AM.png' align='left' width='60%'>
 
 
 
