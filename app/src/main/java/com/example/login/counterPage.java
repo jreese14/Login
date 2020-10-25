@@ -236,7 +236,7 @@ public class counterPage extends AppCompatActivity {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 snapshot.getRef().child("hospitalName").setValue(business_name);
-                                snapshot.getRef().child("email").setValue(email);
+                                //snapshot.getRef().child("email").setValue(email);
                                 snapshot.getRef().child("address").setValue(Notes);
                                 snapshot.getRef().child("freeTesting").setValue(openClose);
                                 snapshot.getRef().child("numberOfBeds").setValue(numberOfBeds);
