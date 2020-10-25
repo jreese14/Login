@@ -12,4 +12,11 @@ The data is then displayed in the user App. All the data is stored and retrieved
 
 <img src='https://github.com/jreese14/Login/blob/master/user.gif' title='userend app getting updated' align='left' width='25%'>
 
+<img src='https://github.com/jreese14/Login/blob/master/user2.gif' title='entering data into database' align='left' width='25%'>
+
+<img src='https://github.com/jreese14/Login/blob/master/user3.gif' title='showing persistence of data' align='left' width='25%'>
+
+
+
+
 
