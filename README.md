@@ -1,4 +1,4 @@
- # Login for HealthChoice App - Business End
+ # Login for HealthChoice App 
 The hospital end login app to enter their details.
 # Details
 This is a Login app for hospitals to enter their details and update the number of ventilators of the hospitals.
@@ -6,4 +6,4 @@ The hospital owner logs in and updates the number of ventilators, their free Cov
 The data is then displayed in the user App. All the data is stored and retrieved from in Firebase.
 
 
-<img src='https://github.com/yash982k/Search-India-App-UI-Using-Flutter/blob/master/ss/app_gif.gif' align='left' width='25%'>
+<img src='https://github.com/jreese14/Login/blob/master/Screen%20Shot%202020-10-25%20at%208.26.23%20AM.png' align='left' width='25%'>
